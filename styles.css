@@ -54,12 +54,14 @@ header {
     cursor: pointer;
     padding: 8px;
     text-decoration: none;
+    border-radius: 50% 50% 50% 50%;
+    background-color: transparent;
 }
 
 .header-icons a:hover {
     i{
         animation: translateY 0.8s infinite alternate; 
-        color: --red-light;
+        /* color: var(--red-light); */
     }
 }
 
@@ -72,7 +74,7 @@ header {
     }
 }
 
-.header-button button {
+.header-button a {
     height: 100%;
     width: 100%;
     padding: 8px 24px ;
@@ -84,9 +86,10 @@ header {
     cursor: pointer;
     transition: background-color 0.8s;
     font-family: 'Sora', sans-serif;
+    text-decoration: none;
 }
 
-button:hover{
+a:hover{
     border: 1px solid var(--red-light);
     background-color: var(--red-light);
 }
@@ -180,6 +183,7 @@ button:hover{
     font-weight: 600;
     margin: 14px 0;
     border-radius: 3px;
+    text-decoration: none;
 }
 
 .buttom-contact:hover{
@@ -337,5 +341,84 @@ button:hover{
 @media screen and (max-width: 768px) {
     .cortes {
         flex-direction: column;
+    }
+}
+
+/*------FOOTER--------*/
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 54px 0;
+    gap: 24px;
+    color: var(--white-normal);
+}
+
+.footer-icons a {
+    color: var(--white-normal);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+}
+
+.footer-icons a:hover {
+    i{
+        animation: translateY 0.8s infinite alternate; 
+        
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer p {
+        font-size: 12px;
+    }
+}
+
+/*BOTAO WHATS*/
+
+.btn-whats {
+    position: fixed;
+    bottom: 14px;
+    right: 24px;
+    z-index: 99;
+}
+
+.btn-whats img{
+    width: 70%;
+    transition: transform 0.4s;
+}
+
+.btn-whats img:hover {
+    transform: scale(1.15);
+}
+
+.btn-whats .tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    width: 120px;
+    top: 8px;
+    left: -144px;
+    padding: 6px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: var(--black-normal);
+    color: var(--white-normal);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.btn-whats:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .btn-whats img {
+        max-width: 74px;
     }
 }
